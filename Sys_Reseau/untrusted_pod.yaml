@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: untrusted-pod
+  annotations:
+    io.kubernetes.cri-o.TrustedSandbox: "false"
+  labels:
+    app: untrusted-pod
+spec:
+  containers:
+  - name: untrusted-container
+    image: docker.io/nginx:latest
